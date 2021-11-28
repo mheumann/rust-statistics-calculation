@@ -1,11 +1,56 @@
-use std::collections::HashMap;
+use std::string::String;
 use std::io;
+
+
+fn main() {}
+
+/* fn main() {
+    println!("Insert a word or enter 'q', if you don't want to translate another word.");
+
+    loop{
+        let mut input = String::new();
+        io::stdin()
+            .read_line(&mut input)
+            .expect("nothing inserted");
+
+        if input.trim() == "q" {
+            break;
+        } else {
+            let translation = pig_translation(match input.trim().parse() {
+                Ok(word) => word,
+                Err(_) => continue
+            });
+
+            println!("{} became {}", input.trim(), translation);
+        }
+    }
+}
+
+fn pig_translation(word: String) -> String {
+    let mut new_word: String = word.clone().to_lowercase();
+    let first: char = word.chars().next().unwrap();
+    return match first {
+        'a' => new_word + "hay",
+        'e' => new_word + "hay",
+        'i' => new_word + "hay",
+        'o' => new_word + "hay",
+        'u' => new_word + "hay",
+        others => {
+            new_word.remove(0);
+            format!("{}{}ay", new_word, others)
+        }
+    };
+} */
+
+/*
+use std::collections::HashMap;
 
 fn main() {
     let mut numbers: Vec<usize> = vec![];
 
     println!("Calculate average, median and mode of a series of numbers");
     println!("Insert a number or enter 'q', if you don't want to add another number.");
+
     loop{
         let mut input = String::new();
         io::stdin()
@@ -39,12 +84,9 @@ fn main() {
 }
 
 fn calc_avg(numbers: &Vec<usize>) -> usize {
-    let mut sum = 0;
+    let mut sum = numbers.iter().sum();
     let num_size = numbers.len();
 
-    for number in numbers {
-        sum += number;
-    }
     return sum / num_size;
 }
 
@@ -78,3 +120,4 @@ fn calc_mode(numbers: &Vec<usize>) -> usize {
 
     return highest_val;
 }
+*/
